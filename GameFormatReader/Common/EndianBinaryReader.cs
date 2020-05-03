@@ -216,6 +216,21 @@ namespace GameFormatReader.Common
             return BitConverter.ToDouble(doubleBytes, 0);
         }
 
+        /// <summary>
+        /// Reads a specific number of characters from the 
+        /// underlying <see cref="Stream"/>.
+        /// </summary>
+        /// <param name="length">The numer of characters to read.</param>
+        /// <returns>The string of characters of length <paramref name="length"/>.</returns>
+        public string ReadString(uint length)
+        {
+            string resultStr = string.Empty;
+            for (uint i = 0; i < length; i++)
+                resultStr += ReadChar();
+
+            return resultStr;
+        }
+
         #endregion
 
         #region PeekRead[x] Methods
