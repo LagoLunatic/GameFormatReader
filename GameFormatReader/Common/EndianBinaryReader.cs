@@ -191,9 +191,7 @@ namespace GameFormatReader.Common
             }
             
             // BE to LE or LE to BE
-            float temp = base.ReadSingle();
-
-            byte[] floatBytes = BitConverter.GetBytes(temp);
+            byte[] floatBytes = BitConverter.GetBytes(base.ReadUInt32());
             Array.Reverse(floatBytes);
 
             return BitConverter.ToSingle(floatBytes, 0);
@@ -206,11 +204,8 @@ namespace GameFormatReader.Common
             {
                 return base.ReadDouble();
             }
-            
-            // BE to LE or LE to BE
-            double temp = base.ReadDouble();
 
-            byte[] doubleBytes = BitConverter.GetBytes(temp);
+            byte[] doubleBytes = BitConverter.GetBytes(base.ReadUInt64());
             Array.Reverse(doubleBytes);
 
             return BitConverter.ToDouble(doubleBytes, 0);
