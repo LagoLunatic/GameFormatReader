@@ -166,7 +166,7 @@ namespace GameFormatReader.Common
                 byte[] floatBytes = BitConverter.GetBytes(value);
                 Array.Reverse(floatBytes);
 
-                base.Write(BitConverter.ToSingle(floatBytes, 0));
+                base.Write(floatBytes);
             }
         }
 
@@ -182,7 +182,7 @@ namespace GameFormatReader.Common
                 byte[] doubleBytes = BitConverter.GetBytes(value);
                 Array.Reverse(doubleBytes);
 
-                base.Write(BitConverter.ToDouble(doubleBytes, 0));
+                base.Write(doubleBytes);
             }
         }
 
