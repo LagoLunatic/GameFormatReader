@@ -210,7 +210,7 @@ namespace GameFormatReader.Common
 
             for (int i = 0; i < str.Length; i++)
             {
-                Write((i < str.Length) ? str[i] : '\0');
+                Write((i < length) ? str[i] : '\0');
             }
         }
 
